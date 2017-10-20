@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Lightbeam",
+  "version": "2.0.4",
+  "options_page": "options.html",
+  "description": "Chrome Lightbeam is a Chrome browser extension that uses interactive visualizations to show you the relationships between third parties and the sites you visit.",
+
+
+  "icons": {
+    "48": "images/lightbeam-48.png",
+    "96": "images/lightbeam-96.png"
+  },
+
+  "permissions": [
+    "webRequest",
+    "<all_urls>",
+    "tabs",
+    "cookies",
+    "storage",
+    "downloads",
+    "privacy",
+	"http://*/*",
+	"https://*/*
+  ],
+
+  "browser_action": {
+    "default_icon": "images/lightbeam-48.png",
+    "default_title": "Chrome Lightbeam",
+	"default_popup": "index.html"
+  },
+
+  "background": {
+    "scripts": [
+      "ext-libs/dexie.js",
+      "js/store.js",
+      "js/capture.js",
+	  "js/lightbeam.js",
+	  "js/storechild.js",
+	  "js/viz.js",
+      "js/background.js"
+    ]
+  }
+}
